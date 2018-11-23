@@ -1,0 +1,93 @@
+#include <stdio.h>
+#include <conio.h>
+#include <iostream>
+
+int main()
+{
+ 	int f; int c; int r; int k;
+   char option;
+
+   cout<<"----------------------------------------------------------------------------------------------------------------------"<<endl;
+   cout<<"						   Program Konversi Suhu		               "<<endl;
+   cout<<"----------------------------------------------------------------------------------------------------------------------"<<endl;
+	cout<<"Pilih unit yang akan anda konversikan:"<<endl;
+	cout<<"    1. Celcius"<<endl;
+	cout<<"    2. Farenheit"<<endl;
+	cout<<"    3. Reamure"<<endl;
+	cout<<"    4. Kelvin"<<endl;
+	cout<<endl;
+   
+	cout<<"=============================================================="<<endl;
+	cout<<"Masukkan > ";cin>>option;
+	cout<<"=============================================================="<<endl;
+	if (option=='1')
+	   {
+		cout<<"Masukkan suhu dalam celcius:";
+		cin>>c;
+
+		f=(1.8*c)+32;
+		r=0.8*c;
+		k=c+273;
+
+		cout<<endl;
+	cout<<"=============================================================="<<endl;
+		cout<<"= Hasilnya adalah : "<<endl;
+		cout<<"=    Suhu dalam farenheit:"<<f<<" F "<<endl;
+		cout<<"=    Suhu dalam reamur   :"<<r<<" R "<<endl;
+		cout<<"=    Suhu dalam kelvin   :"<<k<<" K "<<endl;
+	cout<<"=============================================================="<<endl;
+	   }
+	else if (option=='2')
+	   {
+		cout<<"Masukkan suhu dalam farenheit:";
+		cin>>f;
+
+		c=0.6*(f-32);
+		r=0.4*(f-32);
+		k=0.6*(f-32)+273;
+		cout<<endl;
+	cout<<"=============================================================="<<endl;
+		cout<<"= Hasilnya adalah : "<<endl;
+		cout<<"    Suhu dalam celcius  :"<<c<<" C "<<endl;
+		cout<<"    Suhu dalam reamur   :"<<r<<" R "<<endl;
+		cout<<"    Suhu dalam kelvin   :"<<k<<" K "<<endl;
+	cout<<"=============================================================="<<endl;
+	   }
+
+	else if (option=='3')
+	   {
+		cout<<"Masukkan suhu dalam reamur:";
+		cin>>r;
+
+		c=1.25*r;
+		f=2.25*r+32;
+		k=1.25*r+273;
+		cout<<endl;
+	cout<<"=============================================================="<<endl;
+		cout<<"= Hasilnya adalah : "<<endl;
+		cout<<"=    Suhu dalam celcius  :"<<c<<" C "<<endl;
+		cout<<"=    Suhu dalam farenheit:"<<f<<" F "<<endl;
+		cout<<"=    Suhu dalam kelvin   :"<<k<<" K 	"<<endl;
+	cout<<"=============================================================="<<endl;
+	   }
+	else if (option=='4')
+	  {
+		cout<<"Masukkan suhu dalam kelvin:";
+		cin>>k;
+
+		c=k-273;
+		f=1.8*(k-273)+32;
+		r=0.8*(k-273);
+		cout<<endl;
+	cout<<"=============================================================="<<endl;
+		cout<<"= Hasilnya adalah : "<<endl;
+		cout<<"=    Suhu dalam celcius  :"<<c<<" C "<<endl;
+		cout<<"=    Suhu dalam farenheit:"<<f<<" F "<<endl;
+		cout<<"=    Suhu dalam reamur   :"<<r<<" R "<<endl;
+	cout<<"=============================================================="<<endl;
+	   }
+	   else
+			cout<<"Kesalahan Masukan."<<endl;
+	   getch();
+	   return 0;
+}
