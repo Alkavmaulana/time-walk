@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <conio.h>
+#include <iostream>
+
+void main () {
+	int n, i, harga, harga2, jumlah=0, bayar, sisa;
+	i=1;
+	
+	cout<<"======================================================="<<endl;
+	cout<<"                  SISTEM KREDIT                        "<<endl;
+	cout<<"======================================================="<<endl;
+	
+	cout<<"Harga 1 buah barang = ";cin>>harga;
+
+	cout<<"Jika cicilan di atas 10x maka bunga 5%, di atas 20x bunga 7%"<<endl;
+
+	cout<<"Jumlah banyaknya cicilan pembayaran = ";cin>>n;
+
+	if (n>0 && n<10){
+		harga2=harga;
+	}
+	else if (n>10 && n<20){
+		harga2=harga+(harga*0.05);
+	}
+	else {
+		harga2=harga+(harga*0.07);
+	}
+	cout<<"Harga 1 buah barang menjadi ="<<harga2<<endl;
+	
+	do {
+	cout<<"Cicilan barang ke-"<<i<<"\t=";cin>>bayar;
+		
+		sisa=harga2-bayar;
+		cout<<"\t\t\tSisa Cicilan barang Rp.\t"<<sisa<<endl;
+		i++;
+		harga2=sisa;
+	}while (i<=n && sisa>0);
+		
+		if (sisa==0){
+		cout<<"Barang lunas dibayar"<<endl;
+		}
+		else if (sisa>0){
+		cout<<"Barang belum lunas dibayar"<<endl;
+		}
+      getch ();
+}
