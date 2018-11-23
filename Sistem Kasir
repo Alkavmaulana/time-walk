@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <conio.h>
+#include <iostream>
+
+void main () {
+	int a, n, i, jumlah=0, hargadiskon, hargabarang;
+   i=1;
+   cout<<"====================================================="<<endl;
+   cout<<"///////////////|        SISTEM KASIR       |\\\\\\\\\\\"<<endl;
+   cout<<"====================================================="<<endl;
+   cout<<"Masukkan jumlah barang yang akan dihitung : ";cin>>n;
+	while (i<=n)
+	{
+		cout<<"Harga barang ke-"<<i<<"=";cin>>a;
+      jumlah=jumlah+a;
+      i++;
+	}
+	cout<<endl;
+	cout<<"Jika pembelian barang melebihi 5, maka mendapatkan potongan harga 10%"<<endl;
+	cout<<"Total harga barang \t:"<<jumlah;
+	if (n>5) {
+		hargadiskon=jumlah*0.1;
+		hargabarang=jumlah-hargadiskon;
+	}
+	else {
+		hargadiskon=0;
+		hargabarang=jumlah;
+	}
+	cout<<endl<<"Total diskon barang\t:"<<hargadiskon<<endl;
+	cout<<"Total harga barang setelah didiskon\t:"<<hargabarang<<endl;
+	getch ();
+}
