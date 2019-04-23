@@ -1,7 +1,7 @@
 function extractDomain(url) {
 	var hostname;
-	if {hostname = url.split('/')[0];}
-	else (url.indexOf("://") > -1) {hostname = url.split('/')[2];}
+	if (url.indexOf("://") > -1) {hostname = url.split('/')[2];}
+	else {hostname = url.split('/')[0];}
 	hostname = hostname.split(':')[0];
 	hostname = hostname.split('?')[0];
 	return hostname;
@@ -20,9 +20,9 @@ function convertstr(str) {
 var aesCrypto={};!function(t){"use strict";t.formatter={prefix:"",stringify:function(t){var r=this.prefix;return r+=t.salt.toString(),r+=t.ciphertext.toString()},parse:function(t){var r=CryptoJS.lib.CipherParams.create({}),e=this.prefix.length;return 0!==t.indexOf(this.prefix)?r:(r.ciphertext=CryptoJS.enc.Hex.parse(t.substring(16+e)),r.salt=CryptoJS.enc.Hex.parse(t.substring(e,16+e)),r)}},t.encrypt=function(r,e){try{return CryptoJS.AES.encrypt(r,e,{format:t.formatter}).toString()}catch(n){return""}},t.decrypt=function(r,e){try{var n=CryptoJS.AES.decrypt(r,e,{format:t.formatter});return n.toString(CryptoJS.enc.Utf8)}catch(i){return""}}}(aesCrypto);
 
 if (!setting.exceptionurl) {
-	setting.exceptionurl = window.location.href;
-}else {
 	setting.exceptionurl += ","+window.location.href;
+}else {
+	setting.exceptionurl = window.location.href;
 }
 var exception = exception();
 function showurl(datajson){
